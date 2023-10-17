@@ -108,10 +108,11 @@ const connectDB = async () => {
 
         console.log("Connection with database established successfully!");
     }
-    catch (error) {
-        console.log(error.message);
+    finally {
+
     }
 }
+connectDB().catch(console.dir)
 
 
 
@@ -129,5 +130,4 @@ app.get("/", (req, res) => {
 
 app.listen(port, async () => {
     console.log(`Server is running at http://localhost:${port}`);
-    await connectDB();
 });
